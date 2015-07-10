@@ -1,0 +1,12 @@
+{
+    "name": "simonchristmann/parsedownextended",
+    "require": {
+        "erusev/parsedown-extra": "~0.7"
+    },
+    "authors": [
+        {
+            "name": "Simon Christmann",
+            "email": "simon@christmann.email"
+        }
+    ]
+}
