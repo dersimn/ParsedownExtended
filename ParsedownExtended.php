@@ -22,17 +22,23 @@ class ParsedownExtended extends ParsedownExtra
 		$tmp = "<ul>";
 		$lastLevel = "1";
 
-		foreach ($this->ToC as $i) {
-			$tmp .= "<li>".$i["text"];
-			if ($i["level"]-$lastLevel > 0) {
+		foreach ($this->ToC as $line) {
+			if ($line["level"]-$lastLevel > 0) {
 				$tmp .= "<ul>";
-			} else if ($i["level"]-$lastLevel < 0) {
-				$tmp .= "</ul></li>";
-			} else {
+			}
+			if ($line["level"]-$lastLevel < 0) {
+				for ($i=0; $i < -1*($line["level"]-$lastLevel); $i++) { 
+					$tmp .= "</ul></li>";
+				}
+			}
+
+			$tmp .= "<li>".$line["text"];
+			
+			if ($line["level"]-$lastLevel == 0) {
 				$tmp .= "</li>";
 			}
 
-			$lastLevel = $i["level"];
+			$lastLevel = $line["level"];
 		}
 
 		$tmp .= "</ul>";
