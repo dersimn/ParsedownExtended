@@ -1,5 +1,10 @@
 {
     "name": "simonchristmann/parsedownextended",
+    "description": "Multiple extensions for Parsedown.",
+    "keywords": ["markdown", "parser"],
+    "homepage": "http://simon-christmann.de",
+    "type": "library",
+    "license": "MIT",
     "require": {
         "erusev/parsedown-extra": "~0.7"
     },

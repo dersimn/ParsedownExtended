@@ -2,6 +2,8 @@
 
 class ParsedownExtended extends ParsedownExtra
 {
+	const version = '0.1';
+
 	protected $ToC = array();
 
 	protected function extractHeaderInformation($Block)
