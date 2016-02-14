@@ -3,8 +3,12 @@
 class ParsedownExtended extends ParsedownExtra
 {
 	const version = '0.1';
-
+	private $baseImagePath = "";
 	protected $ToC = array();
+
+	public function setBaseImagePath($path) {
+		$this->baseImagePath = $path;
+	}
 
 	protected function extractHeaderInformation($Block)
 	{
@@ -61,16 +65,24 @@ class ParsedownExtended extends ParsedownExtra
 	}
 
 	protected function blockSetextHeader($Line, array $Block = null)
-    {
-    	$Block = parent::blockSetextHeader($Line, $Block);
+	{
+		$Block = parent::blockSetextHeader($Line, $Block);
 
 		if ($Block != null) {
 			$this->ToC[] = $this->extractHeaderInformation($Block);
 		} 
 
 		return $Block;
-    }
+	}
 
+	protected function inlineImage($Excerpt)
+	{
+		$Image = parent::inlineImage($Excerpt);
+
+		$Image['element']['attributes']['src'] = $this->baseImagePath . $Image['element']['attributes']['src'];
+
+		return $Image;
+	}
 }
 
 ?>
