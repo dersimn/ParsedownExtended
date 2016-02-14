@@ -13,5 +13,8 @@
             "name": "Simon Christmann",
             "email": "simon@christmann.email"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {"ParsedownExtended": ""}
+    }
 }
