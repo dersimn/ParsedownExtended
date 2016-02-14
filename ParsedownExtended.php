@@ -2,7 +2,7 @@
 
 class ParsedownExtended extends ParsedownExtra
 {
-	const version = '0.1';
+	const version = "dev";
 	private $baseImagePath = "";
 	protected $ToC = array();
 
