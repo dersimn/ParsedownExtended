@@ -2,11 +2,11 @@
     "name": "dersimn/parsedownextended",
     "description": "Multiple extensions for Parsedown.",
     "keywords": ["markdown", "parser"],
-    "homepage": "http://simon-christmann.de",
+    "homepage": "https://github.com/dersimn/ParsedownExtended",
     "type": "library",
     "license": "MIT",
     "require": {
-        "erusev/parsedown-extra": "~0.7"
+        "erusev/parsedown-extra": "*"
     },
     "authors": [
         {
